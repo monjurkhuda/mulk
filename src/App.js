@@ -18,6 +18,7 @@ let regions = {
   },
   Dhaka: {
     population: 20_000_000,
+    militia: [],
   },
 };
 
@@ -33,7 +34,15 @@ let militias = {
 };
 
 function militia_attacks_base(region) {
-  console.log(`militia in ${region} attacks base`);
+  console.log(region);
+
+  if (regions[region]?.militia?.length > 0) {
+    let militia_rand_num = Math.floor(
+      Math.random() * regions[region].militia.length
+    );
+    let rand_militia = regions[region].militia[militia_rand_num];
+    console.log(`${rand_militia} in ${region} attacks base`);
+  }
 }
 
 function dailyEvent(region) {
@@ -52,7 +61,7 @@ function issueGenerator() {
   let monthly_event_probability_weight = 12_000;
   let everyday_event_probability_weight = 360_000;
 
-  let daily_events_amount_rand_num = Math.floor(Math.random() * 11);
+  let daily_events_amount_rand_num = Math.floor(Math.random() * 4 + 1);
 
   console.log(daily_events_amount_rand_num);
 
