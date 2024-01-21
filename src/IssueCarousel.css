@@ -1,0 +1,14 @@
+.carousel_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.issue_message {
+  background-color: beige;
+  border: 3px solid rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
